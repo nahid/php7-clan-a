@@ -12,6 +12,7 @@ class XCalculator implements CalculatorInterface
     {
         return $a + $b;
     }
+
     public function sub(float $a, float $b) : float
     {
         return $a - $b;
@@ -32,6 +33,28 @@ class YCalculator implements CalculatorInterface
     }
 }
 
-$cal = new XCalculator();
+class Calk
+{
+    private CalculatorInterface $calculator;
 
-echo $cal->sum(3, 4);
+    public function __construct(CalculatorInterface $calculator)
+    {
+        $this->calculator = $calculator;
+    }
+
+    public function sum($a, $b)
+    {
+        return $this->calculator->sum($a, $b);
+    }
+
+    public function sub($a, $b)
+    {
+        return $this->calculator->sub($a, $b);
+    }
+}
+
+$ycal = new YCalculator();
+
+$calculator = new Calk($ycal);
+
+echo $calculator->sum(3, 4);
