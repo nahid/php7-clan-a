@@ -1,0 +1,30 @@
+{
+    "name": "xcode/blog",
+    "description": "This is a simple blog app",
+    "type": "project",
+    "require": {
+        "php": "7.4",
+        "ext-json": "^7.4",
+        "nahid/jsonq": "9999999-dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nahid Bin Azhar",
+            "email": "nahid.dns@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "helpers/functions.php"
+        ]
+    }
+}
